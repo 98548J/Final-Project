@@ -1,0 +1,108 @@
+
+/* Skolar Latin Regular
+font-family: "skolar-latin", serif;
+font-weight: 400;
+font-style: normal;
+Skolar Latin Italic
+font-family: "skolar-latin", serif;
+font-weight: 400;
+font-style: italic;
+Skolar Latin Bold
+font-family: "skolar-latin", serif;
+font-weight: 700;
+font-style: normal;
+Skolar Latin Bold Italic
+font-family: "skolar-latin", serif;
+font-weight: 700;
+font-style: italic;
+Skolar PE Regular
+font-family: "skolar-pe", sans-serif;
+font-weight: 400;
+font-style: normal;
+Skolar PE Italic
+font-family: "skolar-pe", sans-serif;
+font-weight: 400;
+font-style: italic;
+Skolar PE Bold
+font-family: "skolar-pe", sans-serif;
+font-weight: 700;
+font-style: normal;
+Skolar PE Bold Italic
+font-family: "skolar-pe", sans-serif;
+font-weight: 700;
+font-style: italic; */
+/* 
+Proxima Nova Regular
+font-family: "proxima-nova", sans-serif;
+font-weight: 400;
+font-style: normal;
+Proxima Nova Italic
+font-family: "proxima-nova", sans-serif;
+font-weight: 400;
+font-style: italic;
+Proxima Nova Semibold
+font-family: "proxima-nova", sans-serif;
+font-weight: 600;
+font-style: normal;
+Proxima Nova Bold
+font-family: "proxima-nova", sans-serif;
+font-weight: 700;
+font-style: normal;
+Proxima Nova Bold Italic
+font-family: "proxima-nova", sans-serif;
+font-weight: 700;
+font-style: italic; */
+
+header {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+h1, h2, h3, h4{
+    font-family: "skolar-latin", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+p {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+reveal-box {
+    padding: 10px;
+    background-color: beige;
+    border-radius: 5px;
+}
+
+.reveal-box-show, .reveal-box-hide {
+    position: absolute;
+}
+
+.reveal-box-show {
+    opacity: 1.0;
+}
+
+.reveal-box-hide {
+    opacity: 0.0;
+}
+
+reveal-box:hover .reveal-box-show {
+    opacity: 0.0;
+}
+
+reveal-box:hover .reveal-box-hide {
+    opacity: 1.0;
+}
+

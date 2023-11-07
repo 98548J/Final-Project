@@ -60,7 +60,7 @@ header {
 
 main {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 footer {
@@ -82,12 +82,16 @@ p {
     margin: 0px;
 }
 
+.reveal-box {
+    padding: 10px;
+}
+
 .reveal-box-show, .reveal-box-hide {
     padding: 10px;
     background-color: beige;
     border-radius: 5px;
-    position: absolute;
-    transition: 1s;
+    position: relative;
+    transition: 0.5s;
 }
 
 .reveal-box-show {

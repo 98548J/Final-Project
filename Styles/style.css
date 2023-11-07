@@ -53,6 +53,15 @@ font-family: "proxima-nova", sans-serif;
 font-weight: 700;
 font-style: italic; */
 
+:root {
+    --reveal-box-padding: 15px;
+    --reveal-box-height: 150px;
+}
+
+body {
+    background-image: url("https://www.tilingtextures.com/wp-content/uploads/2019/09/0111b-512x512.jpg");
+}
+
 header {
     display: grid;
     grid-template-columns: auto;
@@ -75,33 +84,49 @@ h1, h2, h3, h4{
     margin: 0px;
 }
 
-p {
+p, ol, ul{
     font-family: "proxima-nova", sans-serif;
     font-weight: 500;
     font-style: normal;
+    font-size: 20px;
     margin: 0px;
 }
 
+p {
+    text-indent: 2em;
+}
+
 .reveal-box {
-    padding: 10px;
+    height: calc(var(--reveal-box-height) + var(--reveal-box-padding) * 2);
+    margin: 15px;
 }
 
 .reveal-box-show, .reveal-box-hide {
-    padding: 10px;
-    background-color: beige;
+    padding-top: var(--reveal-box-padding);
+    padding-bottom: var(--reveal-box-padding);
+    padding-left: calc(var(--reveal-box-padding) * 1.5);
+    padding-right: calc(var(--reveal-box-padding) * 1.5);
+    background-color: rgb(104, 96, 96);
+    color: white;
     border-radius: 5px;
     position: relative;
     transition: 0.5s;
+    height: var(--reveal-box-height);
+    overflow: auto;
 }
 
 .reveal-box-show {
     opacity: 1.0;
     rotate: y 0deg;
+    text-align: center;
 }
 
 .reveal-box-hide {
     opacity: 0.0;
     rotate: y 90deg;
+    top: calc((var(--reveal-box-height) + var(--reveal-box-padding) * 2) * -1);
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .reveal-box:hover .reveal-box-show {

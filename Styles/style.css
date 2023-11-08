@@ -4,6 +4,10 @@
     --reveal-box-height: 215px;
     --reveal-box-border: 5px;
     --brown: rgb(161, 107, 0);
+    --grey: rgb(193, 193, 193);
+    --grey-overlay: rgba(255, 255, 255, .25);
+    --dark-beige: rgb(104, 96, 96);
+    --muted-maroon-overlay: rgba(159, 93, 93, 0.498)
 }
 
 /* width */
@@ -13,19 +17,19 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background-color: rgba(0,0,0,0);
+    background-color: var(--muted-maroon-overlay);
     border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(193, 193, 193); 
+    background: var(--grey); 
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #ffffff; 
+    background: white; 
 }
 
 body {
@@ -51,6 +55,11 @@ main {
 footer {
     display: grid;
     grid-template-columns: auto;
+    position:sticky;
+    top: 0px;
+    backdrop-filter: blur(10px);
+    border-top: 5px solid var(--brown);
+    z-index: 100;
 }
 
 h1, h2, h3, h4{
@@ -60,7 +69,7 @@ h1, h2, h3, h4{
     margin: 0px;
 }
 
-p, ol, ul{
+p, ol, ul, a{
     font-family: "proxima-nova", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -81,6 +90,32 @@ h1 {
     font-size: 5em;
 }
 
+.button-link {
+    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin: 3px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    border: 3px solid white;
+    background-color: var(--grey-overlay);
+    backdrop-filter: blur(3px);
+    color: black;
+    font-weight: 700;
+    position:sticky;
+    top: 0px;
+    transition: 0.2s;
+    rotate: 0deg;
+    text-decoration:  none;
+    width: fit-content;
+}
+
+.button-link:hover{
+    rotate: 3deg;
+    border: 3px solid greenyellow; 
+    background-color: white;
+}
+
 .full-width-box {
     grid-column: 1 / 4;
     padding: 15px;
@@ -96,7 +131,7 @@ h1 {
     padding-bottom: var(--reveal-box-padding);
     padding-left: calc(var(--reveal-box-padding) * 1.5);
     padding-right: calc(var(--reveal-box-padding) * 1.5);
-    background-color: rgb(104, 96, 96);
+    background-color: var(--dark-beige);
     color: white;
     border-radius: 15px;
     border: var(--reveal-box-border) solid var(--brown);
@@ -105,7 +140,7 @@ h1 {
     height: var(--reveal-box-height);
     overflow: auto;    display: flex;
     flex-wrap: wrap;
-    align-content: safe center;
+
     justify-content: center;
 }
 
@@ -113,6 +148,7 @@ h1 {
     opacity: 1.0;
     rotate: y 0deg;
     text-align: center;
+    align-content: safe center;
 }
 
 .reveal-box-hide {
@@ -120,6 +156,7 @@ h1 {
     rotate: y 90deg;
     top: calc((var(--reveal-box-height) + var(--reveal-box-border) * 2 + var(--reveal-box-padding) * 2) * -1);
     padding-left: 5%;
+    align-content: flex-start;
     padding-right: 5%;
 }
 

@@ -1,70 +1,46 @@
-
-/* Skolar Latin Regular
-font-family: "skolar-latin", serif;
-font-weight: 400;
-font-style: normal;
-Skolar Latin Italic
-font-family: "skolar-latin", serif;
-font-weight: 400;
-font-style: italic;
-Skolar Latin Bold
-font-family: "skolar-latin", serif;
-font-weight: 700;
-font-style: normal;
-Skolar Latin Bold Italic
-font-family: "skolar-latin", serif;
-font-weight: 700;
-font-style: italic;
-Skolar PE Regular
-font-family: "skolar-pe", sans-serif;
-font-weight: 400;
-font-style: normal;
-Skolar PE Italic
-font-family: "skolar-pe", sans-serif;
-font-weight: 400;
-font-style: italic;
-Skolar PE Bold
-font-family: "skolar-pe", sans-serif;
-font-weight: 700;
-font-style: normal;
-Skolar PE Bold Italic
-font-family: "skolar-pe", sans-serif;
-font-weight: 700;
-font-style: italic; */
-/* 
-Proxima Nova Regular
-font-family: "proxima-nova", sans-serif;
-font-weight: 400;
-font-style: normal;
-Proxima Nova Italic
-font-family: "proxima-nova", sans-serif;
-font-weight: 400;
-font-style: italic;
-Proxima Nova Semibold
-font-family: "proxima-nova", sans-serif;
-font-weight: 600;
-font-style: normal;
-Proxima Nova Bold
-font-family: "proxima-nova", sans-serif;
-font-weight: 700;
-font-style: normal;
-Proxima Nova Bold Italic
-font-family: "proxima-nova", sans-serif;
-font-weight: 700;
-font-style: italic; */
-
+/* Declare variables */
 :root {
     --reveal-box-padding: 15px;
-    --reveal-box-height: 150px;
+    --reveal-box-height: 215px;
+    --reveal-box-border: 5px;
+    --brown: rgb(161, 107, 0);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(193, 193, 193); 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff; 
 }
 
 body {
     background-image: url("https://www.tilingtextures.com/wp-content/uploads/2019/09/0111b-512x512.jpg");
+    margin: 0px
 }
 
 header {
     display: grid;
     grid-template-columns: auto;
+    position:sticky;
+    top: 0px;
+    backdrop-filter: blur(10px);
+    border-bottom: 5px solid var(--brown);
+    z-index: 100;
 }
 
 main {
@@ -96,6 +72,20 @@ p {
     text-indent: 2em;
 }
 
+h1 {
+    font-size: 2.5em;
+}
+
+.title {
+    padding-left: 45px;
+    font-size: 5em;
+}
+
+.full-width-box {
+    grid-column: 1 / 4;
+    padding: 15px;
+}
+
 .reveal-box {
     height: calc(var(--reveal-box-height) + var(--reveal-box-padding) * 2);
     margin: 15px;
@@ -108,11 +98,15 @@ p {
     padding-right: calc(var(--reveal-box-padding) * 1.5);
     background-color: rgb(104, 96, 96);
     color: white;
-    border-radius: 5px;
+    border-radius: 15px;
+    border: var(--reveal-box-border) solid var(--brown);
     position: relative;
-    transition: 0.5s;
+    transition: 0.75s;
     height: var(--reveal-box-height);
-    overflow: auto;
+    overflow: auto;    display: flex;
+    flex-wrap: wrap;
+    align-content: safe center;
+    justify-content: center;
 }
 
 .reveal-box-show {
@@ -124,17 +118,19 @@ p {
 .reveal-box-hide {
     opacity: 0.0;
     rotate: y 90deg;
-    top: calc((var(--reveal-box-height) + var(--reveal-box-padding) * 2) * -1);
-    padding-left: 10%;
-    padding-right: 10%;
+    top: calc((var(--reveal-box-height) + var(--reveal-box-border) * 2 + var(--reveal-box-padding) * 2) * -1);
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .reveal-box:hover .reveal-box-show {
+    z-index: 0;
     opacity: 0.0;
     rotate: y 90deg;
 }
 
 .reveal-box:hover .reveal-box-hide {
+    z-index: 10;
     opacity: 1.0;
     rotate: y 0deg;
 }

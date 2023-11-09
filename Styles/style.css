@@ -50,16 +50,19 @@ header {
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 85px; /*For footer*/
 }
 
 footer {
     display: grid;
     grid-template-columns: auto;
-    position:sticky;
-    top: 0px;
     backdrop-filter: blur(10px);
     border-top: 5px solid var(--brown);
     z-index: 100;
+    position:fixed;
+    bottom:0;
+    width: 100%;
+    padding: 8px;
 }
 
 h1, h2, h3, h4{
@@ -85,9 +88,89 @@ h1 {
     font-size: 2.5em;
 }
 
+img {
+    margin: 30px;
+    border-radius: 10px;
+}
+
 .title {
     padding-left: 45px;
     font-size: 5em;
+}
+
+.justify {
+    text-align:justify;
+}
+
+.vertical-flex{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.vertical-flex > img{
+    width: 92%;
+}
+
+.caption-image {
+    display: flex;
+    align-items: center;
+}
+
+.paragraph-content {
+    backdrop-filter: blur(3px);
+    padding: 20px;
+    padding-top: 5px;
+    border: 5px dashed var(--muted-maroon-overlay);
+    border-radius: 10px;
+}
+
+.disclaimer {
+    top:45px;
+    right:-40px;
+    position:absolute;
+    width: 375px;
+}
+
+.disclaimer-description {
+    right: 25px;
+    position:absolute;
+    background-color: var(--dark-beige);
+    border: 5px solid var(--brown);
+    border-radius: 25px;
+    padding: 15px;
+    color: white;
+    opacity: 0.0;
+    z-index: 0;
+    padding-right: 40px;
+    transition: 0.25s;
+}
+
+.disclaimer-description > p {
+    font-size: 0.75em;
+}
+
+.disclaimer-info-tag {
+    right: 0px;
+    position:absolute;
+    margin: 0px;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: white;
+    transition: .25s;
+    z-index: 10;
+}
+
+.disclaimer-info-tag:hover{
+    filter:hue-rotate(90deg);
+    rotate: 10deg;
+    box-shadow: 5px 5px olive;
+}
+
+.disclaimer-info-tag:hover + .disclaimer-description {
+    z-index:auto;
+    opacity: 1.0;
 }
 
 .button-link {
@@ -103,7 +186,7 @@ h1 {
     color: black;
     font-weight: 700;
     position:sticky;
-    top: 0px;
+    top: 3px;
     transition: 0.2s;
     rotate: 0deg;
     text-decoration:  none;

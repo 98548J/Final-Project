@@ -38,13 +38,15 @@ body {
 }
 
 header {
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
     position:sticky;
     top: 0px;
     backdrop-filter: blur(10px);
     border-bottom: 5px solid var(--brown);
     z-index: 100;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
 }
 
 main {
@@ -54,8 +56,7 @@ main {
 }
 
 footer {
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
     backdrop-filter: blur(10px);
     border-top: 5px solid var(--brown);
     z-index: 100;
@@ -63,6 +64,9 @@ footer {
     bottom:0;
     width: 100%;
     padding: 8px;
+    flex-wrap:nowrap;
+    flex-direction: row;
+    align-items: center;
 }
 
 h1, h2, h3, h4{
@@ -89,8 +93,11 @@ h1 {
 }
 
 img {
-    margin: 30px;
+    margin: 20px;
+    margin-top: 0px;
+    margin-right: 0px;
     border-radius: 10px;
+    width: calc(100% - 20px);
 }
 
 .title {
@@ -108,13 +115,9 @@ img {
     flex-wrap: wrap;
 }
 
-.vertical-flex > img{
-    width: 92%;
-}
-
 .caption-image {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 }
 
 .paragraph-content {
@@ -123,6 +126,7 @@ img {
     padding-top: 5px;
     border: 5px dashed var(--muted-maroon-overlay);
     border-radius: 10px;
+    height:min-content;
 }
 
 .disclaimer {
@@ -178,6 +182,7 @@ img {
     padding-left: 6px;
     padding-right: 6px;
     margin: 3px;
+    margin-left: 10px;
     margin-bottom: 8px;
     border-radius: 10px;
     border: 3px solid white;
@@ -191,12 +196,35 @@ img {
     rotate: 0deg;
     text-decoration:  none;
     width: fit-content;
+    height: fit-content;
 }
 
 .button-link:hover{
     rotate: 3deg;
     border: 3px solid greenyellow; 
     background-color: white;
+}
+
+.button-link-inactive {
+    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin: 3px;
+    margin-left: 10px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    border: 3px solid green;
+    background-color: var(--muted-maroon-overlay);
+    backdrop-filter: blur(3px);
+    color: black;
+    font-weight: 700;
+    position:sticky;
+    top: 3px;
+    transition: 0.2s;
+    rotate: 0deg;
+    text-decoration:  none;
+    width: fit-content;
+    height: fit-content;
 }
 
 .full-width-box {
